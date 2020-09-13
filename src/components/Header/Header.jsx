@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
 import { ReactComponent as ShoppingCart } from '../../assets/icons/shopping-cart.svg';
+import { ReactComponent as Heart } from '../../assets/icons/heart.svg';
 import './Header.css';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../redux/user/userActions';
@@ -23,12 +24,20 @@ function Header(props) {
                             ? <p className="logout h5" onClick={() => props.signOut()}>Delogare</p>
                             : <Link to="/login" className="h5 mb-0">Logare</Link>
                         }
+                        
                         <div className="d-flex align-items-center">
                             <Link to="/cart" className="d-flex">
                                 <ShoppingCart className="ml-2"/>
                                 <p className="ml-1 mb-0">{ props.numberOfProducts }</p>
                             </Link>
                         </div>
+                        <div className="d-flex align-items-center">
+                            <Link to="/favorites" className="d-flex">
+                                <Heart className="ml-2"/> Fav
+                               
+                            </Link>
+                        </div>
+                       
                     </div>
                 </div>
             </div>

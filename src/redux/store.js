@@ -1,12 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { cartReducer } from './cart/cartReducer';
 import { userReducer } from './user/userReducer';
+import { favoriteReducer } from './favorite/favoriteReducer'
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 const rootReducer = combineReducers({
     user: userReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    favorites: favoriteReducer
 });
 
 const middlewares = [thunk];
