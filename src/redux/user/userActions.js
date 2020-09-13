@@ -1,19 +1,20 @@
 import { signInWithGoogle, signOut, signInWithFacebook2, firebaseAuth, signInWithFacebook} from '../../apis/firebase/firebase';
+import * as ActionsTypes from './userTypes'
 
 function startLoading() {
     return {
-        type: 'START_LOADING'
+        type: ActionsTypes.START_LOADING
     }
 }
 function updateUserData(payload) {
     return {
-        type: 'UPDATE_USER_DATA',
+        type: ActionsTypes.UPDATE_USER_DATA,
         payload
     }
 }
 function updateUserError(payload) {
     return {
-        type: 'UPDATE_USER_ERROR',
+        type: ActionsTypes.UPDATE_USER_ERROR,
         payload
     }
 }
