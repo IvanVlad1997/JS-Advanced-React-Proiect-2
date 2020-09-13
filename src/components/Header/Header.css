@@ -3,6 +3,8 @@ header .logo {
     height: auto;
 }
 
+
+
 header .logout:hover {
     cursor: pointer;
     text-decoration: underline;

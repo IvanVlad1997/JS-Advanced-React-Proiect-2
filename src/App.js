@@ -9,6 +9,7 @@ import Category from './pages/Category/Category';
 import Cart from './pages/Cart/Cart';
 import './utils/utility-classes.css';
 import Product from './pages/Product/Product';
+import TermsAndConditions from './pages/TermsAndConditions/TermsAndConditions';
 
 function App() {
   return(
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route path="/cart" component={Cart}/>
         <Route path="/about" component={About}/>
+        <Route path="/terms" component={TermsAndConditions} />
         <Route path="/category/:categoryName" component={Category}/>
         <Route path="/product/:productId" component={Product}/>
         <Route path="*" component={Page404}/>
