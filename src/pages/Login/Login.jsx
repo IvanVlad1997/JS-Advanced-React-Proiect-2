@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/images/logo.png';
-import { ReactComponent as Google } from '../assets/icons/google.svg';
+import Logo from '../../assets/images/logo.png';
+import { ReactComponent as Google } from '../../assets/icons/google.svg';
 import './Login.css'
 import { connect } from 'react-redux';
-import { loginUser } from '../redux/actions/user';
+import { loginUser } from '../../redux/actions/user';
 
 class Login extends React.Component {
 

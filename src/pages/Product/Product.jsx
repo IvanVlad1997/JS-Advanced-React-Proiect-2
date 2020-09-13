@@ -1,9 +1,9 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import products from '../utils/products.json';
+import Layout from '../../components/Layout/Layout';
+import products from '../../utils/products.json';
 import './Product.css';
 import { connect } from 'react-redux';
-import { addToCart } from '../redux/actions/cart';
+import { addToCart } from '../../redux/actions/cart';
 
 class Product extends React.Component {
     constructor(props) {
