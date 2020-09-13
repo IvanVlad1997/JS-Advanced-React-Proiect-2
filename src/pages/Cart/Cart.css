@@ -1,6 +1,6 @@
 /* Setam dimensiunea maxima pentru imagine in pagin de cart */
 .cart-page img {
-    max-height: 100px;
+    max-height: 200px;
 }
 
 /* Vrem sa schimbam cursorul la hover peste iconita care sterge produsul din cart */

@@ -1,4 +1,7 @@
-.product-item img {
-    max-width: 250px;
-    max-height: 250px;
+
+
+img {
+    width: 330px; /* You can set the dimensions to whatever you want */
+    height: 300px;
+    object-fit: cover;
 }
