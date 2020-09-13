@@ -47,7 +47,15 @@ function ProductItem(props) {
                     </button>)
                 :  <button
                 className="btn btn-outline-dark"
-                onClick={() => {props.addToFavorite(id)}}
+                onClick={() => props.addToFavorite({
+                    favorites: {
+                        id,
+                        name,
+                        price,
+                        currency,
+                        image
+                    }
+                })}
             >
                 Adaugă la favorite
             </button>

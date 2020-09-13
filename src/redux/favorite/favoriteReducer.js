@@ -8,9 +8,9 @@ const initialState = {
 export function favoriteReducer(state = initialState, action) {
     switch (action.type) {
         case ActionsTypes.ADD_TO_FAVORITE :
-                   const thereIs = state.favorites.some((el) => el === action.payload)
+                    const thereIs = state.favorites.some((el) => el.id === action.payload.favorites.id)
                     if (thereIs )  return {...state}
-                    else return {...state, favorites: [...state.favorites, action.payload]  }
+                    else return {...state, favorites: [...state.favorites, action.payload.favorites]  }
                   
                     
                    

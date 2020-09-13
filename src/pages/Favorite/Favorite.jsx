@@ -19,16 +19,16 @@ function Cart(props) {
                         {
                             props.favorites.favorites.map(favorite => {
                                 return (<div className="d-flex justify-content-between align-items-center text-center" key={favorite.id}>
-                                    <div>{favorite.id}asdasdsad</div>
-                                    {/* <div className="w-25 d-flex flex-column justify-content-center align-items-center">
+                                    
+                                    <div className="w-25 d-flex flex-column justify-content-center align-items-center">
                                         <img src={favorite.image} alt="Produs"/>
                                         <p>{ favorite.name }</p>
                                     </div>
                                     <p className="w-25">{ favorite.price } { favorite.currency }</p>
-                                    <p className="w-25">{ favorite.quantity }</p>
-                                    <div className="w-25 d-flex justify-content-center">
-                                        <p className="mr-2">{ favorite.price * favorite.quantity } { product.currency }</p>
-                                        <div onClick={() => props.removeFromCart({id: product.id})}>
+                                
+                                    {/* <div className="w-25 d-flex justify-content-center">
+                                       
+                                        <div onClick={() => props.removeFromCart({id: favorite.id})}>
                                             <Close />
                                         </div>
                                     </div> */}

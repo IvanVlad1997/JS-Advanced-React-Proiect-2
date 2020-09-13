@@ -1,10 +1,10 @@
 import * as ActionsTypes from './favoriteTypes'
 
 
-export function addToFavorite(id) {
+export function addToFavorite(payload) {
     return {
         type: ActionsTypes.ADD_TO_FAVORITE,
-        payload: id
+        payload: payload
     }
 }
 
