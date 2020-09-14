@@ -44,7 +44,7 @@ function Favorite(props) {
                         </div>
                    
                     : <div className="d-flex flex-column align-items-center">
-                        <p className="h3">Nu ai produse în coș!</p>
+                        <p className="h3">Nu ai produse la favorite!</p>
                         <Link to="/"><button className="btn btn-outline-dark">Inapoi la home</button></Link>
                     </div>
                 }
