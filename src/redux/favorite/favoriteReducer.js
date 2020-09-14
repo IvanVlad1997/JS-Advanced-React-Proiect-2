@@ -16,16 +16,13 @@ export function favoriteReducer(state = initialState, action) {
                    
                   
                
-        // case ActionsTypes.REMOVE_FROM_CART:
-        //     const filteredProducts = state.products.filter(product => {
-        //         return product.id !== action.payload.id
-        //     });
-
-        //     return Object.assign({}, state, {
-        //         products: filteredProducts
-        //     });
+        case ActionsTypes.REMOVE_FROM_FAVORITE:
+           
+                    const newArray = state.favorites.filter(el =>  el.id !== action.payload.id)
+                    console.log(newArray)
+                    return {...state, favorites:newArray} 
         default:
-            return state;
+            return state
     }
 }
 

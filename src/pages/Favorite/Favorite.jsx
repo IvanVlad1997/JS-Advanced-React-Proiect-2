@@ -2,10 +2,14 @@ import React from 'react';
 import Layout from '../../components/Layout/Layout';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {removeFromFavorite} from '../../redux/favorite/favoriteActions'
+import {ReactComponent as Close} from '../../assets/icons/close.svg'
 
 
-function Cart(props) {
+function Favorite(props) {
    console.log(props)
+    
+    
     return(
         <Layout>
             <div className="container-fluid container-min-max-width
@@ -26,12 +30,14 @@ function Cart(props) {
                                     </div>
                                     <p className="w-25">{ favorite.price } { favorite.currency }</p>
                                 
-                                    {/* <div className="w-25 d-flex justify-content-center">
+                                    <div className="w-25 d-flex justify-content-center">
                                        
-                                        <div onClick={() => props.removeFromCart({id: favorite.id})}>
+                                        <div onClick={() => props.removeFromFavorite({
+                                             id: favorite.id
+                                        })}>
                                             <Close />
                                         </div>
-                                    </div> */}
+                                    </div>
                                 </div>)
                             })
                         }
@@ -55,8 +61,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-      
+      removeFromFavorite : (favorite) => dispatch(removeFromFavorite(favorite))
+     
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Favorite);

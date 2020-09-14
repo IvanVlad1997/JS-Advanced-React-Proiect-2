@@ -5,8 +5,8 @@ import './TermsAndConditions.css'
 function TermsAndConditions() {
     return(
       <Layout>
-      <div className="container">
-        <h1 className="text-center">Termeni și condiții</h1>
+      <div className="h1term container">
+        <h1 className=" text-center">Termeni și condiții</h1>
          <h4>Ce trebuie sa contina pagina Termeni si conditii?</h4> 
           <p>  Definirea unor termeni pe care îi folosesti în continuare pe pagina precum vanzator – magazinul, cumparator, comanda – formularul electronic, continut – textul site-ului, drepturi de proprietate intelectuala pe care poti sa îl tratezi separat amintind Legea nr. 8/1996 si modificarile ei etc. E important ca cititorul sa stie despre ce vorbesti pe pagina
         </p>
