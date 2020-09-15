@@ -4,6 +4,7 @@ import products from '../../utils/products.json';
 import './Product.css';
 import { connect } from 'react-redux';
 import { addToCart } from '../../redux/cart/cartActions';
+import {addToFavorite, removeFromFavorite} from '../../redux/favorite/favoriteActions'
 
 class Product extends React.Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class Product extends React.Component {
     }
 
     componentDidMount() {
+       
         const { match } = this.props;
         const productId = match.params.productId;
         const categoryValues = Object.values(products);
@@ -31,7 +33,11 @@ class Product extends React.Component {
 
     render() {
         const { product} = this.state;
-
+        const thereIs = this.props.favorites.favorites.some((el) => el.id === product.id)
+        let favorit
+            if  (thereIs) favorit= true
+            else favorit= false
+           
         return (
             <Layout>
                 <div className="product-page container-fluid container-min-max-width">
@@ -58,6 +64,31 @@ class Product extends React.Component {
                             >
                                 Adaugă în coș
                             </button>
+                { favorit 
+                ?    (<button
+                        className="btn btn-outline-dark"
+                        onClick={() => this.props.removeFromFavorite({
+                            id:product.id
+                       })}
+                    >
+
+                        Scoate de la favorite
+                    </button>)
+                :  <button
+                className="btn btn-outline-dark"
+                onClick={() => this.props.addToFavorite({
+                    favorites: {
+                         id: product.id,
+                         name: product.name,
+                         price: product.price,
+                         currency: product.currency,
+                         image: product.image
+                    }
+                })}
+            >
+                Adaugă la favorite
+            </button>
+            }
                             <p><span className="font-weight-bold">Mărime</span>: {product.size}</p>
                             <p><span className="font-weight-bold">Culoare</span>: {product.colour}</p>
                             <p><span className="font-weight-bold">Material</span>: {product.material}</p>
@@ -74,8 +105,16 @@ class Product extends React.Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        addToCart: (payload) => dispatch(addToCart(payload))
+        addToCart: (payload) => dispatch(addToCart(payload)),
+        addToFavorite: (payload) => dispatch(addToFavorite(payload)),
+        removeFromFavorite: (payload) => dispatch(removeFromFavorite(payload))
     }
 }
 
-export default connect(null, mapDispatchToProps)(Product);
+const mapStateToProps = (state) => {
+    return {
+        favorites: state.favorites
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

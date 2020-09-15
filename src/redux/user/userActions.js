@@ -1,4 +1,4 @@
-import { signInWithGoogle, signOut, signInWithFacebook2, firebaseAuth, signInWithFacebook} from '../../apis/firebase/firebase';
+import { signInWithGoogle, signOut, signInWithFacebook} from '../../apis/firebase/firebase';
 import * as ActionsTypes from './userTypes'
 
 function startLoading() {
@@ -45,15 +45,11 @@ export const  loginUserWithFacebook = (facebookProvider) => {
             console.log(token)
             console.log(result)
             console.log(user)
+            dispatch(updateUserData(result.user));
             // ...
           }).catch(function(error) {
             // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
+            dispatch(updateUserError(error));
             // ...
           });
         }
